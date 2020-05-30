@@ -1,0 +1,19 @@
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.inlineBlock{
+    display: inline-block;
+}
+
+.relative{
+    position: relative;
+}
+
+.headingLg{
+    font-size: 6rem;
+    margin: 0;
+    line-height: 1.4;
+}

@@ -4,12 +4,12 @@
 
 .heading{
     margin: 0;
-    font-size: calc(8vw + 1rem); 
+    font-size: min(8vw + 1rem, 6rem); 
     line-height: 1;
 }
 
 .logo{
-    font-family: Montserrat, sans-serif;
+    font-family: var(--logo-font);
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -0.2em;
@@ -37,8 +37,8 @@
     display: flex;
     justify-content: space-between;
     padding: 1rem 0;
-    border-top: 1px solid #C9CACC;
-    border-bottom: 1px solid #C9CACC;
+    border-top: 1px solid var(--light-color);
+    border-bottom: 1px solid var(--light-color);
 }
 
 .socialItem{
@@ -56,4 +56,13 @@
     display: flex;
     align-items: flex-end;
     margin-left: 2rem;
+}
+
+@media screen and (max-width: 500px){
+    .body{
+        flex-direction: column;
+    }
+    .socialMenu{
+        align-self: flex-end;
+    }
 }

@@ -1,0 +1,34 @@
+.listCard{
+    background-color: #fff;
+    padding: var(--card-padding);
+}
+
+.title{
+    margin: 0;
+}
+
+.listItem{
+    padding: 1em 0;
+}
+
+.listItem + .listItem{
+    border-top: 1px solid var(--light-color);
+}
+
+@media screen and (max-width: 680px) and (min-width: 560px){
+    .title{
+        margin-bottom: 1rem;
+    }
+    .listCard ul {
+        display: flex;
+    }
+
+    .listItem {
+        padding: 0 1em;
+    }
+
+    .listItem + .listItem{
+        border-top: none;
+        border-left: 1px solid var(--light-color);
+    }
+}

@@ -1,14 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto:wght@300;400;700&display=swap');
 
+:root{
+    --main-font: Roboto, sans-serif;
+    --logo-font: Montserrat, serif;
+    --light-color: rgba(187, 187, 187, .8);
+    --gap: .8rem;
+    --card-padding: .5rem;
+}
+
 html,
 body{
     padding: 0;
     margin: 0;
-    font-family: Roboto, sans-serif;
+    font-family: var(--main-font);
     font-size: 16px;
     line-height: 1.5;
     background-color: #E3E4E1;
 }
+
 
 
 *{ box-sizing: border-box ;}
@@ -22,4 +31,11 @@ ul{
 img{
     max-width: 100%;
     display: block;
+}
+
+a{
+    color: inherit;
+    text-decoration: inherit;
+    text-transform: inherit;
+    font-size: inherit;
 }

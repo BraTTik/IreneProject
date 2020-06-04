@@ -1,0 +1,27 @@
+.imageCard{
+    background-color: #fff;
+    padding: var(--card-padding);
+    height: 100%;
+}
+
+.imgWrap{
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.title{
+    margin: 0;
+    padding: 1rem 1rem 2rem;
+    color: #fff;
+    width: 100%;
+    max-width: 30rem;
+}
+
+.category{
+    color: #fff;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    padding: 0 1rem;
+}

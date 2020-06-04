@@ -1,7 +1,7 @@
 .container{
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 1em;
+    padding: 0 1rem;
 }
 
 .inlineBlock{
@@ -16,4 +16,78 @@
     font-size: 6rem;
     margin: 0;
     line-height: 1.4;
+}
+
+.navMenu{
+
+}
+
+.navItem{
+    display: block;
+    text-decoration: none;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    padding: .2em 0;
+    text-transform: uppercase;
+}
+
+.textDark{
+    color: black;
+}
+
+.textSm{
+    font-size: max(.7vw, .8rem)
+}
+
+.textMd{
+    font-size: 1rem;
+}
+
+.textLg{
+    font-size: max(2vw, 1.5rem);
+}
+
+.textNormal{
+    font-weight: 400;
+}
+.textUpper{
+    text-transform: uppercase;
+}
+.textThin{
+    font-weight: 300;
+}
+
+.textBold{
+    font-weight: 700;
+}
+
+.textBlack{
+    font-weight: 900;
+}
+
+.navItem:hover,
+.navItem:focus{
+    text-decoration: underline;
+}
+
+.navItem + .navItem::before{
+    content: '';
+    border-left: 1.5px solid rgba(187, 187, 187, .7);
+    margin: 0 .9em;
+}
+
+.dFlex{
+    display: flex;
+}
+
+.dBlock{
+    display: block;
+}
+
+.flexEnd{
+    justify-content: flex-end;
+}
+
+.pointer{
+    cursor: pointer;
 }

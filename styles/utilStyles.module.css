@@ -35,16 +35,24 @@
     color: black;
 }
 
+.textWhite{
+    color: white;
+}
+
 .textSm{
     font-size: max(.7vw, .8rem)
 }
 
 .textMd{
-    font-size: 1rem;
+    font-size: max(.85vw, 1rem);
 }
 
 .textLg{
-    font-size: max(2vw, 1.5rem);
+    font-size: max(1.5vw, 1.5rem);
+}
+
+.textExtraLg{
+    font-size: max(3vw, 3rem);
 }
 
 .textNormal{
@@ -80,8 +88,15 @@
     display: flex;
 }
 
+.dWrap{
+    flex-wrap: wrap;
+}
+
 .dBlock{
     display: block;
+}
+.dNone{
+    display: none;
 }
 
 .flexEnd{
@@ -90,4 +105,33 @@
 
 .pointer{
     cursor: pointer;
+}
+
+.customScroll::-webkit-scrollbar {
+    width: 2px;
+}
+ 
+.customScroll::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+}
+ 
+.customScroll::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgb(63, 63, 63);
+  outline: 1px solid red;
+}
+
+.heightAuto{
+    height: auto !important;
+}
+
+@media screen and (max-width: 550px){
+    .navItem{
+        text-align: center;
+        padding: .5rem;
+    }
+    .navItem + .navItem::before{
+        border: none;
+        margin: 0;
+    }
 }

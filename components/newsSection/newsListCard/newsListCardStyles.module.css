@@ -3,19 +3,32 @@
     padding: var(--card-padding);
 }
 
+.imgWrap{
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-size: cover;
+}
+
+
 .title{
     margin: 0;
+}
+.cover{
+    object-fit: cover;
 }
 
 .listItem{
     padding: 1em 0;
+    line-height: 1.1;
+    overflow: hidden;
 }
 
 .listItem + .listItem{
     border-top: 1px solid var(--light-color);
 }
 
-@media screen and (max-width: 680px) and (min-width: 560px){
+/* @media screen and (max-width: 680px) and (min-width: 560px){
     .title{
         margin-bottom: 1rem;
     }
@@ -31,4 +44,4 @@
         border-top: none;
         border-left: 1px solid var(--light-color);
     }
-}
+} */

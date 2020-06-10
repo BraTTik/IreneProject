@@ -1,0 +1,22 @@
+.footer{
+    margin-top: var(--gap);
+    background-color: #191D20;
+    color: #fff;
+    padding: 3rem 0;
+}
+.footerMenu{
+
+}
+
+
+
+.copyright{
+    margin-top: 2rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 550px){
+    .footerMenu ul{
+        display: block;
+    }
+}

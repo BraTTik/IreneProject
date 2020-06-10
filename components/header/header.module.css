@@ -1,5 +1,6 @@
 .header{
     background-color: #fff;
+    position: relative;
 }
 
 .heading{
@@ -10,12 +11,12 @@
 
 .logo{
     font-family: var(--logo-font);
-    font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -0.2em;
 }
 
 .logoLink{
+    font-weight: 900;
     color: #000;
     text-decoration: none;
 }

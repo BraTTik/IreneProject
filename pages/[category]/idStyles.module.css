@@ -1,0 +1,9 @@
+.newsContainer{
+
+}
+
+@media screen and (max-width: 855px){
+    .newsContainer{
+        display: block;
+    }
+}

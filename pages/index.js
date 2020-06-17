@@ -6,43 +6,22 @@ import NewsListCard from '../components/newsSection/newsListCard';
 import LittleImageCard from '../components/newsSection/littleImageCard';
 import ImageTextCard from '../components/newsSection/imageTextCard';
 import DigitCard from '../components/newsSection/digitCard/digitCard';
-import { getNewsData, getSpaceDigits } from '../lib/news';
+import { getNewsData, getSpaceDigits, getNewsInDirectory } from '../lib/news';
 
-export default function Home({ news, spaceDigits }) {
-  function* getNewsGenerator(arr){
-    for(let i = 0; i < news.length; i++){
-      yield arr[i];
-    }
-  }
-  function getNews(news){
-    let iterator = getNewsGenerator(news);
-    return function () {
-      let value = iterator.next();
-      if(value.done){
-        iterator = getNewsGenerator(news);
-        value = iterator.next();
-      }
-
-      return value.value;
-    }
-  }
-
+export default function Home({ news, popular, events, spaceDigits }) {
   const newsDeploy = getNews(news);
   const digitsDeploy = getNews(spaceDigits);
 
-  function getNewsList(){
-    let result = [];
-    for(let i = 0; i < 4; i++){
-        result = [...result, newsDeploy()];
-    }
-
-    return result;
-  }
   return (
-    <Layout>
+    <>
+      <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+          <title>Irene's Site</title>
+      </Head>
+      <Layout>
         <NewsSection>
           <ImageNewsCard { ...newsDeploy()}/>
-          <NewsListCard list = { [...getNewsList()]} title="Популярное"/>
+          <NewsListCard list = { popular } title="Популярное"/>
         </NewsSection>
         <NewsSection>
           <LittleImageCard news = { newsDeploy() }/>
@@ -53,7 +32,7 @@ export default function Home({ news, spaceDigits }) {
         <NewsSection>
           <ImageNewsCard { ...newsDeploy() }/>
           <ImageTextCard { ...newsDeploy() }/>
-          <NewsListCard list = { [...getNewsList()] } title="События" withImages/>
+          <NewsListCard list = { events } title="События" withImages/>
         </NewsSection>
         <NewsSection>
           <ImageNewsCard { ...newsDeploy() }/>
@@ -88,15 +67,39 @@ export default function Home({ news, spaceDigits }) {
           <LittleImageCard news = { newsDeploy() }/>
         </NewsSection>
     </Layout>
+    </>
   )
+}
+
+export function getNews(news){
+  function* getNewsGenerator(arr){
+    for(let i = 0; i < news.length; i++){
+      yield arr[i];
+    }
+  }
+  let iterator = getNewsGenerator(news);
+  return function () {
+    let value = iterator.next();
+    if(value.done){
+      iterator = getNewsGenerator(news);
+      value = iterator.next();
+    }
+
+    return value.value;
+  }
 }
 
 export async function getServerSideProps(){
   const news = await getNewsData();
   const digits = await getSpaceDigits();
+  const popular = await getNewsInDirectory('popular');
+  const events = await getNewsInDirectory('events');
+  console.log(popular);
   return {
     props: { 
       news,
+      popular,
+      events,
       ...digits
      }
   }

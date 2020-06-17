@@ -1,0 +1,36 @@
+.main{
+    min-width: 70%;
+    margin-right: var(--gap);
+    font-family: var(--main-font);
+}
+
+.header{
+    justify-content: space-between;
+}
+
+.headers{
+    max-width: 70%;
+}
+.title{
+    margin-bottom: 0;
+}
+
+.date{
+    align-self: flex-end;
+}
+
+.category{
+
+}
+
+.image img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.newsBody{
+    background-color: #fff;
+    padding: 1em;
+    font-size: 1rem;
+    line-height: 1.6em;
+}
